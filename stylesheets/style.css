@@ -1,0 +1,50 @@
+body {
+    background-color: cornsilk;
+}
+head {
+    text-align: center;
+    font-size: large;
+    color: indianred;
+}
+container {
+    font-size: medium;
+    font-family: Times;
+    font-color: red;
+
+}
+div.font {
+    font-size: medium;
+    color: red;
+}
+
+div.center {
+ text-align: center;
+}
+
+input[type=text],input[type=password],input[type=email] {
+ width: 20%;
+ display: block;
+ text-align: center;
+ box-sizing: border-box;
+ padding: 10px 20px;
+    border-radius: 8px;
+ margin: auto;
+ margin-bottom: 5px;
+}
+
+
+
+button[type=submit] {
+ width: 20%;
+ background-color: red;
+ color: ghostwhite;
+ padding: 20px 20px;
+ text-align: center;
+ margin: auto;
+ border: none;
+ border-radius: 8px;
+ cursor: pointer;
+ margin-top: 10px;
+ margin-bottom: 10px;
+}
+

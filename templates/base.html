@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block page_title %}{%  endblock %}</title>
+    <link href="/stylesheets/style.css" rel="stylesheet">
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+</style>
+</head>
+<body>
+    <div class ="container">
+         <h1> {% block page_head %}<link href="style.css">{% endblock %}</h1>
+
+    {% block page_content %}<link href="style.css">
+    <div class="center">{% endblock %}
+</div>
+
+</body>
+</html>

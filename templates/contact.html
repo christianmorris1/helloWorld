@@ -1,15 +1,21 @@
+{% extends "base.html" %}
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <title>Contact</title>
+    {% block page_head %}Contact Form {% endblock %}
 </head>
-<div class="container">
 
-    <body>
+<div class="container">
+{% block page_content %}
+    <div>
     {% if form_submitted %}
 
         <h2> Thank you for completing this form! </h2>
-        <div>
+
+
+
+
             <p> First Name:  {{ request.form.get('FirstName')}} </p>
             <p> Last Name:  {{ request.form.get('LastName')}} </p>
             <p> Email Address:  {{ request.form.get('InputEmail')}} </p>
@@ -18,14 +24,15 @@
             <p><a href="{{ url_for('contact') }}">Complete form again </a></p>
 
 
+
         </div>
 
 
 
-        </body>
 
 
     {% else %}
+
 
         <body>
         <form class="row g-3" action="{{ url_for('contact') }}" method="POST">
@@ -55,7 +62,7 @@
 
         </form>
     {% endif %}
-
+{% endblock %}
     </body>
 
 </div>
