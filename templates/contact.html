@@ -1,68 +1,71 @@
-{% extends "base.html" %}
+
 <!DOCTYPE html>
+{% extends "base.html" %}
+
+<!-- Heading of the contact form-->
 <head>
     <meta charset="UTF-8">
-    <title>Contact</title>
-    {% block page_head %}Contact Form {% endblock %}
+    <title>{% block page_head %}Contact Form{% endblock %}</title>
+            {% block page_title %}Contact Form{% endblock %}
 </head>
 
+<!-- Body of the form - if form is already submitted -->
+<body>
 <div class="container">
-{% block page_content %}
-    <div>
-    {% if form_submitted %}
+    {% block page_content %}
+        <div>
+            {% if form_submitted %}
 
-        <h2> Thank you for completing this form! </h2>
-
-
-
-
-            <p> First Name:  {{ request.form.get('FirstName')}} </p>
-            <p> Last Name:  {{ request.form.get('LastName')}} </p>
-            <p> Email Address:  {{ request.form.get('InputEmail')}} </p>
-            <p> Ice Cream Flavor:  {{ request.form.get('IceCream')}} </p>
-
-            <p><a href="{{ url_for('contact') }}">Complete form again </a></p>
-
-
-
-        </div>
+                <h2> Thank you for completing this form! </h2>
 
 
 
 
+                <p> First Name:  {{ request.form.get('FirstName')}} </p>
+                <p> Last Name:  {{ request.form.get('LastName')}} </p>
+                <p> Email Address:  {{ request.form.get('InputEmail')}} </p>
+                <p> Ice Cream Flavor:  {{ request.form.get('IceCream')}} </p>
 
-    {% else %}
-
-
-        <body>
-        <form class="row g-3" action="{{ url_for('contact') }}" method="POST">
-            <div class="mb-3">
-                <label for="FirstName" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="FirstName" name="FirstName" >
-
-            </div>
-
-            <div class="mb-3">
-                <label for="LastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="LastName" name="LastName" >
-
-            </div>
-
-            <div class="mb-3">
-                <label for="InputEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="InputEmail" name="InputEmail"> </div>
+                <p><a href="{{ url_for('contact') }}">Complete form again </a></p>
 
 
-            <div class="mb-3">
-                <label for="IceCream" class="form-label">Favorite ice cream flavor</label>
-                <input type="text" class="form-control" id="IceCream" name="IceCream">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit Form</button>
+
+                </div>
 
 
-        </form>
-    {% endif %}
-{% endblock %}
+                <!-- Content if form has not been submitted: -->
+            {% else %}
+
+
+                <body>
+                <form class="row g-3" action="{{ url_for('contact') }}" method="POST">
+                    <div class="mb-3">
+                        <label for="FirstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="FirstName" name="FirstName" >
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="LastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="LastName" name="LastName" >
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="InputEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="InputEmail" name="InputEmail"> </div>
+
+
+                    <div class="mb-3">
+                        <label for="IceCream" class="form-label">Favorite ice cream flavor</label>
+                        <input type="text" class="form-control" id="IceCream" name="IceCream">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+
+
+                </form>
+            {% endif %}
+    {% endblock %}
     </body>
 
 </div>
