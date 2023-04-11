@@ -215,7 +215,7 @@ def error():
 
 @app.route('/training')
 @login_required
-@role_required(['ADMIN','MANAGER','STUDENT'])
+@role_required(['ADMIN','MANAGER'])
 def training():
 
     return render_template('training.html')
